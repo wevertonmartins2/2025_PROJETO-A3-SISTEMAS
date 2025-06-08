@@ -234,15 +234,13 @@ API Clínica
 - URL: http://localhost:3000/api/auth/register
 - Body (JSON):
 
-```javascript
-// src/tests/auth.test.js
-  {
-    const novoUsuario = {
-      nome: 'Usuário Teste',
-      email: 'usuario.teste@clinica.com',
-      senha: 'senha123',
-      role: 'recepcionista'
-    };
+{
+  "nome": "Usuário Teste",
+  "email": "usuario.teste@clinica.com",
+  "senha": "senha123",
+  "role": "recepcionista"
+ }
+
 
     const response = await request(app)
       .post('/api/auth/register')
