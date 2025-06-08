@@ -203,7 +203,7 @@ API Clínica
 ├── 👤 Pacientes
 │   └── POST /pacientes
 │   └── GET /pacientes
-│   └── Delete /pacientes
+│   └── Del /pacientes
 
 ```
 #####  🔐 1. Registro de Usuário
@@ -290,22 +290,44 @@ pm.environment.set("token", jsonData.data.token);
   "data_nascimento": "1990-01-01",
   "telefone": "(11) 98765-4321",
   "email": "paciente.teste@email.com",
-  "endereco": "Rua Teste, 123"
+  "endereco": "Rua Teste, 123 - Minas Gerais/MG"
 }
+```
 
-- Tests:
-pm.test("✅ Criar Paciente - status 201", () => {
-  pm.response.to.have.status(201);
+#### GET - Buscar Paciente por ID
+- Método: GET
+- URL: http://localhost:3000/api/pacientes/{{pacienteId}}
+  
+```postman
+{
+  "Authorization": "Bearer {{token}}"
+}
+pm.test("✅ GET - Status 200 OK", () => {
+  pm.response.to.have.status(200);
 });
 
-const jsonData = pm.response.json();
+const data = pm.response.json().data;
 
-pm.test("✅ Criar Paciente - contém id_paciente", () => {
-  pm.expect(jsonData.data).to.have.property("id_paciente");
+pm.test("✅ GET - Nome do paciente é Paciente Teste", () => {
+  pm.expect(data.nome).to.eql("Paciente Teste");
 });
 
-// Salvar ID para uso futuro
-pm.environment.set("pacienteId", jsonData.data.id_paciente);
+pm.test("✅ GET - Verificar campos obrigatórios", () => {
+  pm.expect(data).to.have.property("cpf");
+  pm.expect(data).to.have.property("email");
+  pm.expect(data).to.have.property("data_nascimento");
+});
+```
+
+#### PUT - Atualizar Paciente
+- Método: PUT
+- URL:
+  
+```postman
+http://localhost:3000/api/pacientes/{{pacienteId}}
+
+
+
 
 ```
 
