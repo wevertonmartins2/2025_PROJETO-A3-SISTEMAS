@@ -325,11 +325,40 @@ pm.test("✅ GET - Verificar campos obrigatórios", () => {
   
 ```postman
 http://localhost:3000/api/pacientes/{{pacienteId}}
+```
+- Headers:
+```postman
+{
+  "Authorization": "Bearer {{token}}",
+  "Content-Type": "application/json"
+}
+```
+- Body (raw JSON):
+```postman
+{
+  "nome": "Maria Santos",
+  "cpf": "983.654.321-00",
+  "data_nascimento": "1990-10-20",
+  "telefone": "(11) 98765-4321",
+  "email": "maria@email.com",
+  "endereco": "Av. B, 456 - São Paulo/SP"
+}
 
+pm.test("✅ PUT - Status 200 OK", () => {
+  pm.response.to.have.status(200);
+});
 
+const data = pm.response.json().data;
+
+pm.test("✅ PUT - Paciente atualizado corretamente", () => {
+  pm.expect(data.nome).to.eql("Maria Santos");
+  pm.expect(data.email).to.eql("maria@email.com");
+  pm.expect(data.updated_at).not.eql(data.created_at);
+});
 
 
 ```
+
 
 ### Testes de Frontend
 
