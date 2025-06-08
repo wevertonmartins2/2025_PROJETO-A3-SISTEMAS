@@ -220,10 +220,6 @@ fetch(\'http://localhost:3000/api/auth/login\', { method: 'POST',
 ```
 
 
-## Testes
-
-O projeto inclui testes automatizados para garantir a qualidade e o funcionamento correto da API e do frontend.
-
 ### Testes de Backend
 
 Os testes de backend são implementados usando Jest e Supertest, e estão localizados no diretório `src/tests/`.
