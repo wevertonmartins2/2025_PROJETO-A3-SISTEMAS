@@ -39,10 +39,6 @@ O sistema foi desenvolvido para atender às necessidades de uma clínica médica
 
 ## 📁Estrutura do Projeto
 
-O projeto está organizado em duas partes principais: backend (API) e frontend.
-
-### Estrutura do Backend
-
 ```
 clinica-api/
 ├── src/
@@ -99,7 +95,7 @@ clinica-api/
    ```bash
    npm run db:seed
    ```
-## Banco de Dados
+## 🗃️Banco de Dados
 
 O sistema utiliza um banco de dados MySQL com as seguintes tabelas:
 
@@ -121,20 +117,20 @@ O sistema utiliza um banco de dados MySQL com as seguintes tabelas:
 - Pacientes ↔ Exames (1:N): Um paciente pode realizar vários exames.
 - Pacientes ↔ Prescrições (1:N): Um paciente pode receber várias prescrições.
 
-## Endpoints da API
+## 🔗Endpoints da API
 
 A API oferece os seguintes endpoints para cada entidade:
 
-### Base URL
+### 📍Base URL
 ```
 http://localhost:3000/api
 ```
 
-### Autenticação
+### 🔐Autenticação
 - `POST /auth/login`: Autentica um usuário.
 - `POST /auth/register`: Registra um novo usuário.
 
-### Pacientes
+### 👤Pacientes
 - `GET /pacientes`: Lista todos os pacientes (com paginação).
 - `GET /pacientes/:id`: Obtém detalhes de um paciente.
 - `POST /pacientes`: Cria um novo paciente.
@@ -142,7 +138,7 @@ http://localhost:3000/api
 - `PATCH /pacientes/:id`: Atualiza parcialmente um paciente.
 - `DELETE /pacientes/:id`: Exclui um paciente.
 
-### Médicos
+### 👨‍⚕️Médicos
 - `GET /medicos`: Lista todos os médicos.
 - `GET /medicos/:id`: Obtém detalhes de um médico.
 - `POST /medicos`: Cria um novo médico.
@@ -150,7 +146,7 @@ http://localhost:3000/api
 - `PATCH /medicos/:id`: Atualiza parcialmente um médico.
 - `DELETE /medicos/:id`: Exclui um médico.
 
-### Consultas
+### 📅Consultas
 - `GET /consultas`: Lista todas as consultas (filtros: ?id_paciente=1, ?id_medico=2, ?data_inicio=2025-06-01).
 - `GET /consultas/:id`: Obtém detalhes de uma consulta.
 - `POST /consultas`: Cria uma nova consulta.
@@ -158,14 +154,14 @@ http://localhost:3000/api
 - `PATCH /consultas/:id`: Atualiza parcialmente uma consulta.
 - `DELETE /consultas/:id`: Cancela uma consulta.
 
-### Prontuários
+### 📄Prontuários
 - `GET /prontuarios`: Lista prontuários (filtro: ?id_paciente=1).
 - `GET /prontuarios/:id`: Obtém um prontuário.
 - `POST /prontuarios`: Cria um novo prontuário.
 - `PUT /prontuarios/:id`: Atualiza um prontuário.
 - `DELETE /prontuarios/:id`: Exclui um prontuário.
 
-### Exames
+### 🧪Exames
 - `GET /exames`: Lista exames (filtros: ?id_paciente=1, ?id_consulta=1).
 - `GET /exames/:id`: Obtém detalhes de um exame.
 - `POST /exames`: Cria um novo exame.
@@ -173,7 +169,7 @@ http://localhost:3000/api
 - `PATCH /exames/:id`: Atualiza parcialmente um exame.
 - `DELETE /exames/:id`: Exclui um exame.
 
-### Prescrições
+### 💊Prescrições
 - `GET /prescricoes`: Lista prescrições (filtros: ?id_paciente=1, ?id_consulta=1).
 - `GET /prescricoes/:id`: Obtém detalhes de uma prescrição.
 - `POST /prescricoes`: Cria uma nova prescrição.
@@ -181,7 +177,7 @@ http://localhost:3000/api
 - `PATCH /prescricoes/:id`: Atualiza parcialmente uma prescrição.
 - `DELETE /prescricoes/:id`: Exclui uma prescrição.
 
-## Autenticação e Autorização
+## 🔑Autenticação e Autorização
 
 O sistema utiliza tokens JWT (JSON Web Tokens) para autenticação e controle de acesso baseado em papéis (RBAC).
 
