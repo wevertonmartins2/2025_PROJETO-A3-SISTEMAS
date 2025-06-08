@@ -25,7 +25,7 @@ O sistema foi desenvolvido para atender às necessidades de uma clínica médica
 1. **Client-Server**: A aplicação segue uma separação clara entre cliente e servidor. O backend é responsável exclusivamente pelo processamento, armazenamento e fornecimento de dados via API, permitindo que o frontend evolua de forma independente.
 2. **Stateless**: Cada requisição enviada ao servidor contém todas as informações necessárias para ser processada (como o token de autenticação no cabeçalho), sem depender de contexto armazenado no backend entre requisições.
 3. **Cacheable**: As respostas da API podem incluir informações de cache em seus headers (como Cache-Control), otimizando desempenho e reduzindo a carga no servidor quando apropriado.
-4. **Uniform Interface**: A API utiliza uma interface consistente, baseada em padrões REST. Endpoints seguem convenções claras de recursos (/api/pacientes, /api/auth), utilizando métodos HTTP semânticos (GET, POST, PUT, DELETE), facilitando a compreensão e integração.
+4. **Uniform Interface**: A API utiliza uma interface consistente, baseada em padrões REST. Endpoints seguem convenções claras de recursos (/api/pacientes, /api/auth), utilizando métodos HTTP semânticos (GET, POST, PUT, PATCH, DELETE), facilitando a compreensão e integração.
 5. **Layered System**: A arquitetura do backend permite a organização em camadas, como middlewares de autenticação, validação de dados e manipulação de erros. Essa abordagem melhora a segurança e a manutenção do sistema.
 
 ## 📋Requisitos
