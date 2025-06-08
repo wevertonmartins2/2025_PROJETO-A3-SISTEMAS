@@ -6,8 +6,8 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 
 - 🔍 [ Visão Geral](#visão-geral)
 - 📋 [Requisitos](#requisitos)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Configuração do Ambiente](#configuração-do-ambiente)
+- 📁 [Estrutura do Projeto](#estrutura-do-projeto)
+- ⚙️ [Configuração do Ambiente](#configuração-do-ambiente)
 - [Banco de Dados](#banco-de-dados)
 - [Endpoints da API](#endpoints-da-api)
 - [Autenticação e Autorização](#autenticação-e-autorização)
@@ -30,7 +30,7 @@ O sistema foi desenvolvido para atender às necessidades de uma clínica médica
 5. **Layered System**: A arquitetura permite o uso de camadas intermediárias.
 6. **Code on Demand** (opcional): Possibilidade de envio de scripts executáveis ao cliente (se aplicável).
 
-## Requisitos
+## 📋Requisitos
 
 ### Backend
 - Node.js (v14.x ou superior)
