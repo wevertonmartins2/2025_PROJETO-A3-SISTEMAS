@@ -245,7 +245,7 @@ pm.environment.set("token", pm.response.json().data.token);
 ##### 🔐 2. Login de Administrador
 
 - Método: POST
-- URL: http://localhost:3000/api/v1/auth/login
+- URL: http://localhost:3000/api/auth/login
 - Body (JSON):
   
 ```postman
