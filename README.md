@@ -272,7 +272,7 @@ pm.environment.set("token", jsonData.data.token);
 
 #####  📌 Testes de Pacientes no Postman de CRUD
 
-#####  ✅  1. Criar Novo Paciente📝
+##### ✅  POST - Criar Novo Paciente📝
 
 - Método: POST
 - URL: http://localhost:3000/api/pacientes
@@ -295,7 +295,7 @@ pm.environment.set("token", jsonData.data.token);
 }
 ```
 
-#### 🔎 GET - Buscar Paciente por ID
+##### 🔎 GET - Buscar Paciente por ID
 - Método: GET
 - URL: http://localhost:3000/api/pacientes/{{pacienteId}}
   
@@ -320,7 +320,7 @@ pm.test("✅ GET - Verificar campos obrigatórios", () => {
 });
 ```
 
-#### 📝 PUT - Atualizar Paciente
+##### 📝 PUT - Atualizar Paciente
 - Método: PUT
 - URL:
   
@@ -359,7 +359,7 @@ pm.test("✅ PUT - Paciente atualizado corretamente", () => {
 
 ```
 
-#### 🗑️ DELETE - Remover Paciente
+##### 🗑️ DELETE - Remover Paciente
 - Método: DELETE
 - URL:
   
