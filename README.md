@@ -240,17 +240,28 @@ API Clínica
   "email": "usuario.teste@clinica.com",
   "senha": "senha123",
   "role": "admin"
- }
+}
+
 pm.test("✅ Registro - status 201", () => {
   pm.response.to.have.status(201);
 });
 
-pm.test("✅ Registro - dados retornados corretamente", () => {
-  const data = pm.response.json().data;
-  pm.expect(data).to.have.property("usuario");
-  pm.expect(data).to.have.property("token");
-  pm.expect(data.usuario.email).to.eql("usuario.teste@clinica.com");
+``` 
+pm.test("✅ Registro - formato da resposta", () => {
+  const jsonData = pm.response.json();
+  pm.expect(jsonData).to.have.property("status", "success");
+  pm.expect(jsonData).to.have.property("message", "Usuário registrado com sucesso");
+  pm.expect(jsonData.data).to.have.property("usuario");
+  pm.expect(jsonData.data.usuario).to.include({
+    nome: "Usuário Teste",
+    email: "usuario.teste@clinica.com",
+    role: "admin"
+  });
+  pm.expect(jsonData.data).to.have.property("token");
 });
+
+// Salvar token para as próximas requisições
+pm.environment.set("token", pm.response.json().data.token);
 
 ```
 🔐 2. Login de Administrador
