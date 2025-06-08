@@ -22,12 +22,11 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 
 O sistema foi desenvolvido para atender às necessidades de uma clínica médica, permitindo o gerenciamento de pacientes, médicos, consultas, prontuários, exames e prescrições. A API segue os princípios da arquitetura REST, implementando todos os constraints definidos por Roy Fielding:
 
-1. **Client-Server**: Separação clara entre cliente e servidor.
-2. **Stateless**: Todas as requisições contêm todas as informações necessárias para o processamento.
-3. **Cacheable**: As respostas contêm informações de cache (quando aplicável).
-4. **Uniform Interface**: A interface da API é uniforme, seguindo convenções REST.
-5. **Layered System**: A arquitetura permite o uso de camadas intermediárias.
-6. **Code on Demand** (opcional): Possibilidade de envio de scripts executáveis ao cliente (se aplicável).
+1. **Client-Server**: A aplicação segue uma separação clara entre cliente e servidor. O backend é responsável exclusivamente pelo processamento, armazenamento e fornecimento de dados via API, permitindo que o frontend evolua de forma independente.
+2. **Stateless**: Cada requisição enviada ao servidor contém todas as informações necessárias para ser processada (como o token de autenticação no cabeçalho), sem depender de contexto armazenado no backend entre requisições.
+3. **Cacheable**: As respostas da API podem incluir informações de cache em seus headers (como Cache-Control), otimizando desempenho e reduzindo a carga no servidor quando apropriado.
+4. **Uniform Interface**: A API utiliza uma interface consistente, baseada em padrões REST. Endpoints seguem convenções claras de recursos (/api/pacientes, /api/auth), utilizando métodos HTTP semânticos (GET, POST, PUT, DELETE), facilitando a compreensão e integração.
+5. **Layered System**: A arquitetura do backend permite a organização em camadas, como middlewares de autenticação, validação de dados e manipulação de erros. Essa abordagem melhora a segurança e a manutenção do sistema.
 
 ## 📋Requisitos
 
