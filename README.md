@@ -191,32 +191,6 @@ O sistema utiliza tokens JWT (JSON Web Tokens) para autenticação e controle de
 3. O cliente armazena o token e o inclui no cabeçalho `Authorization` em requisições subsequentes.
 4. O servidor valida o token e verifica as permissões do usuário para cada operação.
 
-### Exemplo de Uso
-```javascript
-// Login
-fetch(\'http://localhost:3000/api/auth/login\', { method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    email: 'admin@clinica.com',
-    senha: 'admin123'
-  })
-})
-.then(response => response.json())
-.then(data => {
-  // Armazenar o token
-  localStorage.setItem('token', data.data.token);
-});
-
-// Requisição autenticadfetch(\'http://localhost:3000/api/pacientes\', {
-  headers: {
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
-  }
-})
-.then(response => response.json())
-.then(data => console.log(data));
-```
 
 ## ✅Coleção de Testes no Postman — Backend
 
@@ -227,7 +201,10 @@ API Clínica
 │   ├── POST /auth/register
 │   └── POST /auth/login
 ├── 👤 Pacientes
+│   └── POST /pacientes
 │   └── GET /pacientes
+│   └── Delete /pacientes
+
 ```
 #####  🔐 1. Registro de Usuário
 - Método: POST
