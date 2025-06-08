@@ -61,14 +61,18 @@ clinica-api/
 
 ### Backend
 
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/clinica-api.git
-cd clinica-api
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/clinica-api.git
+   cd clinica-api
+   ```
 
-# 2. Instale as dependências
-npm install
-
-# 3. Configure o arquivo .env
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+   
+3. Configure o arquivo `.env` na raiz do projeto:
 
    ```
    # Configurações do Servidor
