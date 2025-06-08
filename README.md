@@ -224,9 +224,17 @@ fetch(\'http://localhost:3000/api/auth/login\', { method: 'POST',
 
 #### Estrutura dos Testes
 ```
-- Método: POST
-- URL: http://localhost:3000/api/auth/register
-- Body (raw → JSON):
+- **Método: POST
+- **URL: http://localhost:3000/api/auth/register
+- **Body (raw → JSON):
+{
+  "nome": "Maria Recepcionista",
+  "email": "maria@clinica.com",
+  "senha": "senha456",
+  "role": "recepcionista"
+}
+
+
 ```
 
 #### Exemplos de Testes
