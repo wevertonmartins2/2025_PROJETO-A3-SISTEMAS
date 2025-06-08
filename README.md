@@ -11,9 +11,8 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 🗃️ [Banco de Dados](#banco-de-dados)
 - 🔗 [Endpoints da API](#endpoints-da-api)
 - 🔐 [Autenticação e Autorização](#autenticação-e-autorização)
-- 🧪 [Testes](#testes)
+- 🧪 [Testes](#Coleção-de-Testes-no-Postman)
   - [Testes de Backend](#testes-de-backend)
-  - [Testes de Frontend](#testes-de-frontend)
 - [Frontend](#frontend)
 - 🚀 [Executando o Projeto](#executando-o-projeto)
 - 🛡️ [Considerações de Segurança](#considerações-de-segurança)
@@ -219,31 +218,15 @@ fetch(\'http://localhost:3000/api/auth/login\', { method: 'POST',
 .then(data => console.log(data));
 ```
 
+## ✅Coleção de Testes no Postman
 
 ### Testes de Backend
 
-Os testes de backend são implementados usando Jest e Supertest, e estão localizados no diretório `src/tests/`.
-
 #### Estrutura dos Testes
-
-- **api.test.js**: Testes básicos da API, verificando se os endpoints estão funcionando corretamente.
-- **auth.test.js**: Testes de autenticação e autorização.
-- **crud.test.js**: Testes de operações CRUD para cada entidade.
-- **setup.js**: Configurações globais para os testes.
-
-#### Executando os Testes
-
-Para executar todos os testes:
-
-```bash
-cd clinica-api
-npm test
 ```
-
-Para executar um arquivo de teste específico:
-
-```bash
-npm test -- src/tests/api.test.js
+- Método: POST
+- URL: http://localhost:3000/api/auth/register
+- Body (raw → JSON):
 ```
 
 #### Exemplos de Testes
