@@ -8,16 +8,16 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 📋 [Requisitos](#requisitos)
 - 📁 [Estrutura do Projeto](#estrutura-do-projeto)
 - ⚙️ [Configuração do Ambiente](#configuração-do-ambiente)
-- [Banco de Dados](#banco-de-dados)
-- [Endpoints da API](#endpoints-da-api)
-- [Autenticação e Autorização](#autenticação-e-autorização)
-- [Testes](#testes)
+- 🗃️ [Banco de Dados](#banco-de-dados)
+- 🔗 [Endpoints da API](#endpoints-da-api)
+- 🔐 [Autenticação e Autorização](#autenticação-e-autorização)
+- 🧪 [Testes](#testes)
   - [Testes de Backend](#testes-de-backend)
   - [Testes de Frontend](#testes-de-frontend)
 - [Frontend](#frontend)
-- [Executando o Projeto](#executando-o-projeto)
-- [Considerações de Segurança](#considerações-de-segurança)
-- [Melhorias Futuras](#melhorias-futuras)
+- 🚀 [Executando o Projeto](#executando-o-projeto)
+- 🛡️ [Considerações de Segurança](#considerações-de-segurança)
+- 📈 [Melhorias Futuras](#melhorias-futuras)
 
 ## 🔍Visão Geral
 
@@ -37,11 +37,7 @@ O sistema foi desenvolvido para atender às necessidades de uma clínica médica
 - MySQL (v5.7 ou superior)
 - npm ou yarn
 
-### Frontend
-- Node.js (v14.x ou superior)
-- npm ou yarn
-
-## Estrutura do Projeto
+## 📁Estrutura do Projeto
 
 O projeto está organizado em duas partes principais: backend (API) e frontend.
 
@@ -49,104 +45,31 @@ O projeto está organizado em duas partes principais: backend (API) e frontend.
 
 ```
 clinica-api/
-├── node_modules/
 ├── src/
-│   ├── config/
-│   │   └── database.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── pacienteController.js
-│   │   ├── medicoController.js
-│   │   ├── consultaController.js
-│   │   ├── prontuarioController.js
-│   │   ├── exameController.js
-│   │   └── prescricaoController.js
-│   ├── middlewares/
-│   │   └── authMiddleware.js
-│   ├── models/
-│   │   ├── Paciente.js
-│   │   ├── Medico.js
-│   │   ├── Consulta.js
-│   │   ├── Prontuario.js
-│   │   ├── Exame.js
-│   │   ├── Prescricao.js
-│   │   ├── Usuario.js
-│   │   └── index.js
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── pacienteRoutes.js
-│   │   ├── medicoRoutes.js
-│   │   ├── consultaRoutes.js
-│   │   ├── prontuarioRoutes.js
-│   │   ├── exameRoutes.js
-│   │   └── prescricaoRoutes.js
-│   ├── tests/
-│   │   ├── api.test.js
-│   │   ├── auth.test.js
-│   │   ├── crud.test.js
-│   │   └── setup.js
-│   └── utils/
-│       ├── createDatabase.js
-│       ├── initializeDatabase.js
-│       ├── seedDatabase.js
-│       └── testDatabaseConnection.js
-├── .env
-├── .gitignore
-├── jest.config.js
-├── package.json
-└── server.js
-```
-
-### Estrutura do Frontend
+│   ├── config/                  → Configurações do banco
+│   ├── controllers/             → Lógica de cada entidade
+│   ├── middlewares/            → Middleware de autenticação
+│   ├── models/                 → Definição das entidades (ORM)
+│   ├── routes/                 → Definição de rotas da API
+│   └── utils/                  → Scripts de banco e testes
+├── .env                        → Variáveis de ambiente
+├── package.json                → Dependências do projeto
+└── server.js                   → Ponto de entrada da API
 
 ```
-clinica-frontend/
-├── node_modules/
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── ProtectedRoute.jsx
-│   │   ├── Sidebar.jsx
-│   │   └── ui/
-│   ├── pages/
-│   │   ├── Dashboard.jsx
-│   │   ├── Login.jsx
-│   │   ├── Pacientes.jsx
-│   │   ├── Medicos.jsx
-│   │   ├── Consultas.jsx
-│   │   ├── Prontuarios.jsx
-│   │   ├── Exames.jsx
-│   │   └── Prescricoes.jsx
-│   ├── services/
-│   │   └── api.js
-│   ├── App.css
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
-├── .gitignore
-├── index.html
-├── package.json
-└── vite.config.js
-```
-
-## Configuração do Ambiente
+## ⚙️Configuração do Ambiente
 
 ### Backend
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/clinica-api.git
-   cd clinica-api
-   ```
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/clinica-api.git
+cd clinica-api
 
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
+# 2. Instale as dependências
+npm install
 
-3. Configure o arquivo `.env` na raiz do projeto:
+# 3. Configure o arquivo .env
+
    ```
    # Configurações do Servidor
    PORT=3000
