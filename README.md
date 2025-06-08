@@ -11,12 +11,12 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 🗃️ [Banco de Dados](#banco-de-dados)
 - 🔗 [Endpoints da API](#endpoints-da-api)
 - 🔐 [Autenticação e Autorização](#autenticação-e-autorização)
-- ✅ [Coleção de Testes](#Coleção-de-Testes-no-Postman)
-  - [Testes de Backend](#testes-de-backend)
-- [Frontend](#frontend)
+- 🔄 [Coleção de Testes](#Coleção-de-Testes-no-Postman)
+  - ✅ [Testes de Backend](#testes-de-backend)
 - 🚀 [Executando o Projeto](#executando-o-projeto)
 - 🛡️ [Considerações de Segurança](#considerações-de-segurança)
 - 📈 [Melhorias Futuras](#melhorias-futuras)
+- 👥 [Grupo A3](#Grupo-A3)
 
 ## 🔍Visão Geral
 
@@ -192,7 +192,7 @@ O sistema utiliza tokens JWT (JSON Web Tokens) para autenticação e controle de
 4. O servidor valida o token e verifica as permissões do usuário para cada operação.
 
 
-## ✅Coleção de Testes no Postman
+## 🔄Coleção de Testes no Postman
 
 #### 📁Testes de Backend
 ```
@@ -203,7 +203,9 @@ API Clínica
 ├── 👤 Pacientes
 │   └── POST /pacientes
 │   └── GET /pacientes
-│   └── Del /pacientes
+│   └── PUT /pacientes
+│   └── DEL /pacientes
+
 
 ```
 #####  🔐 1. Registro de Usuário
@@ -269,9 +271,9 @@ pm.environment.set("token", jsonData.data.token);
 
 ```
 
-#####  Testes de Pacientes no Postman de CRUD
+#####  ✅ Testes de Pacientes no Postman de CRUD
 
-#####  1. Criar Novo Paciente
+#####  ✅  1. Criar Novo Paciente📝
 
 - Método: POST
 - URL: http://localhost:3000/api/pacientes
@@ -294,7 +296,7 @@ pm.environment.set("token", jsonData.data.token);
 }
 ```
 
-#### GET - Buscar Paciente por ID
+#### 🔎 GET - Buscar Paciente por ID
 - Método: GET
 - URL: http://localhost:3000/api/pacientes/{{pacienteId}}
   
@@ -319,7 +321,7 @@ pm.test("✅ GET - Verificar campos obrigatórios", () => {
 });
 ```
 
-#### PUT - Atualizar Paciente
+#### 📝 PUT - Atualizar Paciente
 - Método: PUT
 - URL:
   
@@ -356,86 +358,37 @@ pm.test("✅ PUT - Paciente atualizado corretamente", () => {
   pm.expect(data.updated_at).not.eql(data.created_at);
 });
 
-
 ```
 
+#### 🗑️ DELETE - Remover Paciente
+- Método: DELETE
+- URL:
+  
+```postman
+http://localhost:3000/api/pacientes/{{pacienteId}}
+```
+- Headers:
+```postman
+{
+  "Authorization": "Bearer {{token}}"
+}
 
-### Testes de Frontend
+pm.test("✅ DELETE - Status 200 OK", () => {
+  pm.response.to.have.status(200);
+});
 
-Os testes de frontend são manuais e podem ser realizados através da interface de usuário. O frontend foi desenvolvido para interagir com a API e testar todas as funcionalidades disponíveis.
+const jsonData = pm.response.json();
 
-#### Testando o Login
+pm.test("✅ DELETE - Mensagem de sucesso", () => {
+  pm.expect(jsonData.message).to.include("excluído");
+});
 
-1. Acesse a página de login: `http://localhost:5173/login`
-2. Utilize uma das seguintes credenciais:
-   - Admin: admin@clinica.com / admin123
-   - Médico: carlos@clinica.com / medico123
-   - Recepcionista: maria@clinica.com / recep123
-3. Verifique se o login é bem-sucedido e se você é redirecionado para o dashboard.
+pm.test("✅ DELETE - Retorno com status 'success'", () => {
+  pm.expect(jsonData.status).to.eql("success");
+});
+```
 
-#### Testando o CRUD de Pacientes
-
-1. Faça login no sistema.
-2. Navegue até a página de pacientes: `http://localhost:5173/pacientes`
-3. Teste as seguintes operações:
-   - **Listar**: Verifique se a lista de pacientes é exibida corretamente.
-   - **Criar**: Clique no botão "Novo Paciente", preencha o formulário e salve.
-   - **Visualizar**: Clique em um paciente da lista para ver seus detalhes.
-   - **Editar**: Clique no botão de edição, altere os dados e salve.
-   - **Excluir**: Clique no botão de exclusão e confirme a operação.
-
-#### Testando o CRUD de Consultas
-
-1. Faça login no sistema.
-2. Navegue até a página de consultas: `http://localhost:5173/consultas`
-3. Teste as seguintes operações:
-   - **Listar**: Verifique se a lista de consultas é exibida corretamente.
-   - **Criar**: Clique no botão "Nova Consulta", preencha o formulário e salve.
-   - **Visualizar**: Clique em uma consulta da lista para ver seus detalhes.
-   - **Editar**: Clique no botão de edição, altere os dados e salve.
-   - **Excluir**: Clique no botão de exclusão e confirme a operação.
-
-#### Testando Permissões de Usuário
-
-1. Faça login como recepcionista.
-2. Verifique se você tem acesso apenas às páginas de pacientes, médicos e consultas.
-3. Tente acessar uma página restrita, como prontuários: `http://localhost:5173/prontuarios`
-4. Verifique se você é redirecionado ou se recebe uma mensagem de erro.
-5. Repita o processo com diferentes tipos de usuário para verificar as permissões.
-
-## Frontend
-
-O frontend foi desenvolvido utilizando React e oferece uma interface amigável para interagir com a API. Ele inclui as seguintes funcionalidades:
-
-- **Autenticação**: Login e registro de usuários.
-- **Dashboard**: Visão geral do sistema com estatísticas e acesso rápido às principais funcionalidades.
-- **Gerenciamento de Pacientes**: CRUD completo de pacientes.
-- **Gerenciamento de Médicos**: CRUD completo de médicos.
-- **Gerenciamento de Consultas**: CRUD completo de consultas.
-- **Gerenciamento de Prontuários**: CRUD completo de prontuários (apenas para médicos e administradores).
-- **Gerenciamento de Exames**: CRUD completo de exames (apenas para médicos e administradores).
-- **Gerenciamento de Prescrições**: CRUD completo de prescrições (apenas para médicos e administradores).
-
-### Tecnologias Utilizadas
-
-- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **React Router**: Para gerenciamento de rotas.
-- **Axios**: Para requisições HTTP.
-- **React Hook Form**: Para gerenciamento de formulários.
-- **React Toastify**: Para notificações.
-- **Tailwind CSS**: Para estilização.
-- **Lucide React**: Para ícones.
-
-### Estrutura de Arquivos
-
-- **components/**: Componentes reutilizáveis.
-- **pages/**: Páginas da aplicação.
-- **services/**: Serviços para comunicação com a API.
-- **App.jsx**: Componente principal da aplicação.
-- **App.css**: Estilos globais.
-- **main.jsx**: Ponto de entrada da aplicação.
-
-## Executando o Projeto
+## 🚀Executando o Projeto
 
 ### Backend
 
@@ -446,16 +399,7 @@ O frontend foi desenvolvido utilizando React e oferece uma interface amigável p
    ```
    O servidor estará disponível em `http://localhost:3000`.
 
-### Frontend
-
-1. Inicie o servidor de desenvolvimento:
-   ```bash
-   cd clinica-frontend
-   npm run dev
-   ```
-   O frontend estará disponível em `http://localhost:5173`.
-
-## Considerações de Segurança
+## 🛡️Considerações de Segurança
 
 O projeto implementa várias medidas de segurança:
 
@@ -466,7 +410,7 @@ O projeto implementa várias medidas de segurança:
 5. **Proteção contra SQL Injection**: O ORM Sequelize é utilizado para prevenir ataques de SQL Injection.
 6. **Senhas Criptografadas**: As senhas são armazenadas de forma criptografada utilizando bcrypt.
 
-## Melhorias Futuras
+## 📈Melhorias Futuras
 
 Algumas melhorias que podem ser implementadas no futuro:
 
@@ -478,15 +422,14 @@ Algumas melhorias que podem ser implementadas no futuro:
 6. **Implementação de PWA**: Transformar o frontend em um Progressive Web App.
 7. **Melhorias na Segurança**: Implementar autenticação de dois fatores e outras medidas de segurança adicionais.
 
-## Contribuição
+## 🤝Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
-## Licença
+## 👥Grupo A3
+- Desenvolvido por:
+  - EDILSON CLODOALVES GALVÃO DE LIMA - 32214931
+  - FLÁVIO GREGO SANTIAGO - 322129707
+  - WEVERTON ARAÚJO MARTINS - 32210007
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
----
-
-Desenvolvido por [Seu Nome] para o projeto de faculdade.
 
