@@ -11,7 +11,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 🗃️ [Banco de Dados](#banco-de-dados)
 - 🔗 [Endpoints da API](#endpoints-da-api)
 - 🔐 [Autenticação e Autorização](#autenticação-e-autorização)
-- 🧪 [Testes](#Coleção-de-Testes-no-Postman)
+- ✅ [Coleção de Testes](#Coleção-de-Testes-no-Postman-—-Backend)
   - [Testes de Backend](#testes-de-backend)
 - [Frontend](#frontend)
 - 🚀 [Executando o Projeto](#executando-o-projeto)
@@ -218,11 +218,21 @@ fetch(\'http://localhost:3000/api/auth/login\', { method: 'POST',
 .then(data => console.log(data));
 ```
 
-## ✅Coleção de Testes no Postman — Backend da Clínica
+## ✅Coleção de Testes no Postman — Backend
 
-#### Estrutura dos Testes
+#### 📁Estrutura dos Testes
 ```
-##### Teste de Autenticação
+API Clínica
+├── 🔐 Autenticação
+│   ├── POST /auth/register
+│   └── POST /auth/login
+├── 👤 Pacientes
+│   └── GET /pacientes
+```
+#####  🔐 1. Registro de Usuário
+- Método: POST
+- URL: http://localhost:3000/api/auth/register
+- Body (JSON):
 
 ```javascript
 // src/tests/auth.test.js
