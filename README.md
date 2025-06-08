@@ -11,7 +11,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 🗃️ [Banco de Dados](#banco-de-dados)
 - 🔗 [Endpoints da API](#endpoints-da-api)
 - 🔐 [Autenticação e Autorização](#autenticação-e-autorização)
-- ✅ [Coleção de Testes](#Coleção-de-Testes-no-Postman—Backend)
+- ✅ [Coleção de Testes](#Coleção-de-Testes-no-Postman)
   - [Testes de Backend](#testes-de-backend)
 - [Frontend](#frontend)
 - 🚀 [Executando o Projeto](#executando-o-projeto)
@@ -192,9 +192,9 @@ O sistema utiliza tokens JWT (JSON Web Tokens) para autenticação e controle de
 4. O servidor valida o token e verifica as permissões do usuário para cada operação.
 
 
-## ✅Coleção de Testes no Postman — Backend
+## ✅Coleção de Testes no Postman
 
-#### 📁Estrutura dos Testes
+#### 📁Testes de Backend
 ```
 API Clínica
 ├── 🔐 Autenticação
@@ -275,15 +275,15 @@ pm.environment.set("token", jsonData.data.token);
 
 - Método: POST
 - URL: http://localhost:3000/api/pacientes
-
-```postman
 - Headers:
+```postman
 {
   "Authorization": "Bearer {{token}}",
   "Content-Type": "application/json"
 }
-
+```
 - Body (raw JSON):
+```postman
 {
   "nome": "Paciente Teste",
   "cpf": "111.222.333-44",
