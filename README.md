@@ -4,7 +4,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 
 ## 📚 Sumário
 
-🔍- [ Visão Geral](#visão-geral)
+- 🔍 [ Visão Geral](#visão-geral)
 - [Requisitos](#requisitos)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Configuração do Ambiente](#configuração-do-ambiente)
@@ -19,7 +19,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - [Considerações de Segurança](#considerações-de-segurança)
 - [Melhorias Futuras](#melhorias-futuras)
 
-## Visão Geral
+## 🔍Visão Geral
 
 O sistema foi desenvolvido para atender às necessidades de uma clínica médica, permitindo o gerenciamento de pacientes, médicos, consultas, prontuários, exames e prescrições. A API segue os princípios da arquitetura REST, implementando todos os constraints definidos por Roy Fielding:
 
