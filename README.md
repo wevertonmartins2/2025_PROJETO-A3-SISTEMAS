@@ -234,12 +234,12 @@ API Clínica
 - URL: http://localhost:3000/api/auth/register
 - Body (JSON):
   
-```javascript
+```postman
 {
   "nome": "Usuário Teste",
   "email": "usuario.teste@clinica.com",
   "senha": "senha123",
-  "role": "recepcionista"
+  "role": "admin"
  }
 pm.test("✅ Registro - status 201", () => {
   pm.response.to.have.status(201);
@@ -252,11 +252,12 @@ pm.test("✅ Registro - dados retornados corretamente", () => {
   pm.expect(data.usuario.email).to.eql("usuario.teste@clinica.com");
 });
 
+```
+🔐 2. Login de Administrador
 
-
-    const response = await request(app)
-      .post('/api/auth/register')
-      .send(novoUsuario);
+- Método: POST
+- URL: http://localhost:3000/api/v1/auth/login
+- Body (JSON):
 
     expect(response.status).toBe(201);
     expect(response.body).toHaveProperty('data');
