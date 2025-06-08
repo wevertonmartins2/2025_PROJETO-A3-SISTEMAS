@@ -424,7 +424,7 @@ Algumas melhorias que podem ser implementadas no futuro:
 
 ## 🤝Contribuição
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+Contribuições são bem-vindas! Sinta-se à vontade.
 
 ## 👥Grupo A3
 - Desenvolvido por:
