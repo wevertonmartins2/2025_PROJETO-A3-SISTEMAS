@@ -218,33 +218,15 @@ fetch(\'http://localhost:3000/api/auth/login\', { method: 'POST',
 .then(data => console.log(data));
 ```
 
-## ✅Coleção de Testes no Postman
-
-### Testes de Backend
+## ✅Coleção de Testes no Postman — Backend da Clínica
 
 #### Estrutura dos Testes
 ```
-- **Método: POST
-- **URL: http://localhost:3000/api/auth/register
-- **Body (raw → JSON):
-{
-  "nome": "Maria Recepcionista",
-  "email": "maria@clinica.com",
-  "senha": "senha456",
-  "role": "recepcionista"
-}
-
-
-```
-
-#### Exemplos de Testes
-
 ##### Teste de Autenticação
 
 ```javascript
 // src/tests/auth.test.js
-describe('Autenticação', () => {
-  it('deve registrar um novo usuário', async () => {
+  {
     const novoUsuario = {
       nome: 'Usuário Teste',
       email: 'usuario.teste@clinica.com',
@@ -253,7 +235,7 @@ describe('Autenticação', () => {
     };
 
     const response = await request(app)
-      .post('/api/v1/auth/register')
+      .post('/api/auth/register')
       .send(novoUsuario);
 
     expect(response.status).toBe(201);
