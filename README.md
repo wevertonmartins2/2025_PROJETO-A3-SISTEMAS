@@ -263,7 +263,7 @@ pm.test("✅ Registro - formato da resposta", () => {
 pm.environment.set("token", pm.response.json().data.token);
 
 ```
-🔐 2. Login de Administrador
+##### 🔐 2. Login de Administrador
 
 - Método: POST
 - URL: http://localhost:3000/api/v1/auth/login
@@ -292,52 +292,44 @@ pm.environment.set("token", jsonData.data.token);
 
 ```
 
-##### Teste de CRUD
+#####  Testes de Pacientes no Postman de CRUD
 
-```javascript
-// src/tests/crud.test.js
-describe('CRUD de Pacientes', () => {
-  it('deve criar um novo paciente', async () => {
-    const novoPaciente = {
-      nome: 'Paciente Teste',
-      cpf: '111.222.333-44',
-      data_nascimento: '1990-01-01',
-      telefone: '(11) 98765-4321',
-      email: 'paciente.teste@email.com',
-      endereco: 'Rua Teste, 123'
-    };
+#####  1. Criar Novo Paciente
 
-    const response = await request(app)
-      .post('/api/v1/pacientes')
-      .set('Authorization', `Bearer ${token}`)
-      .send(novoPaciente);
+- Método: POST
+- URL: http://localhost:3000/api/pacientes
 
-    expect(response.status).toBe(201);
-    expect(response.body).toHaveProperty('data');
-    expect(response.body.data).toHaveProperty('id_paciente');
-  });
+```postman
+- Headers:
+{
+  "Authorization": "Bearer {{token}}",
+  "Content-Type": "application/json"
+}
 
-  it('deve atualizar um paciente existente', async () => {
-    const dadosAtualizados = {
-      nome: 'Paciente Teste Atualizado',
-      cpf: '111.222.333-44',
-      data_nascimento: '1990-01-01',
-      telefone: '(11) 98765-4321',
-      email: 'paciente.atualizado@email.com',
-      endereco: 'Rua Teste Atualizada, 456'
-    };
+- Body (raw JSON):
+{
+  "nome": "Paciente Teste",
+  "cpf": "111.222.333-44",
+  "data_nascimento": "1990-01-01",
+  "telefone": "(11) 98765-4321",
+  "email": "paciente.teste@email.com",
+  "endereco": "Rua Teste, 123"
+}
 
-    const response = await request(app)
-      .put(`/api/v1/pacientes/${pacienteId}`)
-      .set('Authorization', `Bearer ${token}`)
-      .send(dadosAtualizados);
-
-    expect(response.status).toBe(200);
-    expect(response.body).toHaveProperty('data');
-    expect(response.body.data.nome).toBe(dadosAtualizados.nome);
-    expect(response.body.data.email).toBe(dadosAtualizados.email);
-  });
+- Tests:
+pm.test("✅ Criar Paciente - status 201", () => {
+  pm.response.to.have.status(201);
 });
+
+const jsonData = pm.response.json();
+
+pm.test("✅ Criar Paciente - contém id_paciente", () => {
+  pm.expect(jsonData.data).to.have.property("id_paciente");
+});
+
+// Salvar ID para uso futuro
+pm.environment.set("pacienteId", jsonData.data.id_paciente);
+
 ```
 
 ### Testes de Frontend
