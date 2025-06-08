@@ -61,18 +61,18 @@ clinica-api/
 
 ### Backend
 
-1. Clone o repositório:
+**1**. Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/clinica-api.git
    cd clinica-api
    ```
 
-2. Instale as dependências:
+**2**. Instale as dependências:
    ```bash
    npm install
    ```
    
-3. Configure o arquivo `.env` na raiz do projeto:
+**3**. Configure o arquivo `.env` na raiz do projeto:
 
    ```
    # Configurações do Servidor
@@ -90,12 +90,12 @@ clinica-api/
    JWT_EXPIRES_IN=1d
    ```
 
-4. Crie o banco de dados:
+**4**. Crie o banco de dados:
    ```bash
    npm run db:create
    ```
 
-5. Popule o banco de dados com dados iniciais:
+**5**. Popule o banco de dados com dados iniciais:
    ```bash
    npm run db:seed
    ```
