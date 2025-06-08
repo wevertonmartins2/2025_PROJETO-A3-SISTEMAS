@@ -246,7 +246,6 @@ pm.test("✅ Registro - status 201", () => {
   pm.response.to.have.status(201);
 });
 
-``` 
 pm.test("✅ Registro - formato da resposta", () => {
   const jsonData = pm.response.json();
   pm.expect(jsonData).to.have.property("status", "success");
@@ -269,31 +268,28 @@ pm.environment.set("token", pm.response.json().data.token);
 - Método: POST
 - URL: http://localhost:3000/api/v1/auth/login
 - Body (JSON):
-
-    expect(response.status).toBe(201);
-    expect(response.body).toHaveProperty('data');
-    expect(response.body.data).toHaveProperty('usuario');
-    expect(response.body.data).toHaveProperty('token');
-    expect(response.body.data.usuario.email).toBe(novoUsuario.email);
-  });
-
-  it('deve fazer login como administrador', async () => {
-    const credenciais = {
-      email: 'admin@clinica.com',
-      senha: 'admin123'
-    };
-
-    const response = await request(app)
-      .post('/api/v1/auth/login')
-      .send(credenciais);
-
-    expect(response.status).toBe(200);
-    expect(response.body).toHaveProperty('data');
-    expect(response.body.data).toHaveProperty('usuario');
-    expect(response.body.data).toHaveProperty('token');
-    expect(response.body.data.usuario.role).toBe('admin');
-  });
+  
+```postman
+  {
+    "email": "usuario.teste@clinica.com",
+    "senha": "senha123"
+  }
+ pm.test("✅ Login - status 200", () => {
+  pm.response.to.have.status(200);
 });
+
+pm.test("✅ Login - formato da resposta", () => {
+  const jsonData = pm.response.json();
+  pm.expect(jsonData).to.have.property("status", "success");
+  pm.expect(jsonData).to.have.property("message", "Login realizado com sucesso");
+  pm.expect(jsonData.data).to.have.property("usuario");
+  pm.expect(jsonData.data.usuario).to.have.property("email", "usuario.teste@clinica.com");
+  pm.expect(jsonData.data).to.have.property("token");
+});
+
+// Armazenar token no ambiente do Postman
+pm.environment.set("token", jsonData.data.token);
+
 ```
 
 ##### Teste de CRUD
