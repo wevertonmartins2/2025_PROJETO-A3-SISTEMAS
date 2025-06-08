@@ -5,7 +5,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 ## 📚 Sumário
 
 - 🔍 [ Visão Geral](#visão-geral)
-- [Requisitos](#requisitos)
+- 📋 [Requisitos](#requisitos)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Configuração do Ambiente](#configuração-do-ambiente)
 - [Banco de Dados](#banco-de-dados)
