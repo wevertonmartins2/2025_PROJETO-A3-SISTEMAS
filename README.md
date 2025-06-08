@@ -2,9 +2,9 @@
 
 Este projeto implementa uma API RESTful completa para um sistema de gerenciamento de clínica médica, seguindo os princípios da arquitetura REST conforme descrito por Roy Fielding. O sistema permite realizar operações CRUD (Create, Read, Update, Delete) sobre diversas entidades relacionadas ao contexto de uma clínica médica, como pacientes, médicos, consultas, prontuários, exames e prescrições.
 
-## Sumário
+## 📚 Sumário
 
-- [Visão Geral](#visão-geral)
+🔍- [ Visão Geral](#visão-geral)
 - [Requisitos](#requisitos)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Configuração do Ambiente](#configuração-do-ambiente)
