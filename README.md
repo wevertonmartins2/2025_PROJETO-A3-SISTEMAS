@@ -11,7 +11,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 🗃️ [Banco de Dados](#banco-de-dados)
 - 🔗 [Endpoints da API](#endpoints-da-api)
 - 🔐 [Autenticação e Autorização](#autenticação-e-autorização)
-- ✅ [Coleção de Testes](#Coleção-de-Testes-no-Postman-—-Backend)
+- ✅ [Coleção de Testes](#Coleção-de-Testes-no-Postman—Backend)
   - [Testes de Backend](#testes-de-backend)
 - [Frontend](#frontend)
 - 🚀 [Executando o Projeto](#executando-o-projeto)
