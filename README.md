@@ -276,6 +276,7 @@ pm.environment.set("token", jsonData.data.token);
 
 - Método: POST
 - URL: http://localhost:3000/api/pacientes
+  
 - Headers:
 ```postman
 {
@@ -322,11 +323,8 @@ pm.test("✅ GET - Verificar campos obrigatórios", () => {
 
 ##### 📝 PUT - Atualizar Paciente
 - Método: PUT
-- URL:
+- URL: http://localhost:3000/api/pacientes/{{pacienteId}}
   
-```postman
-http://localhost:3000/api/pacientes/{{pacienteId}}
-```
 - Headers:
 ```postman
 {
@@ -361,11 +359,8 @@ pm.test("✅ PUT - Paciente atualizado corretamente", () => {
 
 ##### 🗑️ DELETE - Remover Paciente
 - Método: DELETE
-- URL:
+- URL: http://localhost:3000/api/pacientes/{{pacienteId}}
   
-```postman
-http://localhost:3000/api/pacientes/{{pacienteId}}
-```
 - Headers:
 ```postman
 {
