@@ -233,13 +233,25 @@ API Clínica
 - Método: POST
 - URL: http://localhost:3000/api/auth/register
 - Body (JSON):
-
+  
+```javascript
 {
   "nome": "Usuário Teste",
   "email": "usuario.teste@clinica.com",
   "senha": "senha123",
   "role": "recepcionista"
  }
+pm.test("✅ Registro - status 201", () => {
+  pm.response.to.have.status(201);
+});
+
+pm.test("✅ Registro - dados retornados corretamente", () => {
+  const data = pm.response.json().data;
+  pm.expect(data).to.have.property("usuario");
+  pm.expect(data).to.have.property("token");
+  pm.expect(data.usuario.email).to.eql("usuario.teste@clinica.com");
+});
+
 
 
     const response = await request(app)
