@@ -8,7 +8,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 📋 [Requisitos](#requisitos)
 - 📁 [Estrutura do Projeto](#estrutura-do-projeto)
 - ⚙ [Configuração do Ambiente](#Configuração-do-Ambiente)
-- [Banco de Dados](#Banco-de-Dados)
+- 🗃️[Banco de Dados](#Banco-de-Dados)
 - 🔗 [Endpoints da API](#endpoints-da-api)
 - 🔐 [Autenticação e Autorização](#autenticação-e-autorização)
 - 🔄 [Coleção de Testes](#Coleção-de-Testes-no-Postman)
@@ -16,6 +16,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 🚀 [Executando o Projeto](#executando-o-projeto)
 - 🛡️ [Considerações de Segurança](#considerações-de-segurança)
 - 👥 [Grupo A3](#Grupo-A3)
+
   
 ## 🔍Visão Geral
 
