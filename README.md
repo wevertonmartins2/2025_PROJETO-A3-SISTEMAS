@@ -15,7 +15,6 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
   - ✅ [Testes de Backend](#testes-de-backend)
 - 🚀 [Executando o Projeto](#executando-o-projeto)
 - 🛡️ [Considerações de Segurança](#considerações-de-segurança)
-- 📈 [Melhorias Futuras](#melhorias-futuras)
 - 👥 [Grupo A3](#Grupo-A3)
 
 ## 🔍Visão Geral
@@ -403,18 +402,6 @@ O projeto implementa várias medidas de segurança:
 4. **Proteção contra CSRF**: Tokens são utilizados para proteger contra ataques CSRF.
 5. **Proteção contra SQL Injection**: O ORM Sequelize é utilizado para prevenir ataques de SQL Injection.
 6. **Senhas Criptografadas**: As senhas são armazenadas de forma criptografada utilizando bcrypt.
-
-## 📈Melhorias Futuras
-
-Algumas melhorias que podem ser implementadas no futuro:
-
-1. **Testes Automatizados para o Frontend**: Implementar testes automatizados para o frontend utilizando Jest e React Testing Library.
-2. **Implementação de WebSockets**: Para notificações em tempo real.
-3. **Melhorias na Interface do Usuário**: Adicionar mais recursos visuais e melhorar a experiência do usuário.
-4. **Implementação de Relatórios**: Adicionar funcionalidades para geração de relatórios.
-5. **Integração com Serviços de Email**: Para envio de notificações por email.
-6. **Implementação de PWA**: Transformar o frontend em um Progressive Web App.
-7. **Melhorias na Segurança**: Implementar autenticação de dois fatores e outras medidas de segurança adicionais.
 
 ## 🤝Contribuição
 
