@@ -92,7 +92,7 @@ clinica-api/
    ```bash
    npm run db:seed
    ```
-## 🗃️Banco de Dados
+## Banco de Dados
 
 O sistema utiliza um banco de dados MySQL com as seguintes tabelas:
 
