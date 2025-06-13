@@ -3,6 +3,7 @@ const { sequelize } = require('../config/database');
 const Paciente = require('./Paciente');
 const Medico = require('./Medico');
 
+//Campos da tabela do banco de dados
 const Consulta = sequelize.define('Consulta', {
   id_consulta: {
     type: DataTypes.INTEGER,
