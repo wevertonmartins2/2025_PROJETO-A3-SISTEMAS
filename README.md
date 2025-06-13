@@ -412,6 +412,6 @@ Contribuições são bem-vindas! Sinta-se à vontade.
 - Desenvolvido por:
   - EDILSON CLODOALVES GALVÃO DE LIMA - 32214931
   - FLÁVIO GREGO SANTIAGO - 322129707
-  - WEVERTON ARAÚJO MARTINS - 32210007
+  - WEVERTON ARAUJO MARTINS - 32210007
 
 
