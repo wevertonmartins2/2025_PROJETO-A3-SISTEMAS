@@ -1,3 +1,4 @@
+//Arquivo de configuração do banco.
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
