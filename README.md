@@ -28,6 +28,20 @@ O sistema foi desenvolvido para atender às necessidades de uma clínica médica
 4. **Uniform Interface**: A API utiliza uma interface consistente, baseada em padrões REST. Endpoints seguem convenções claras de recursos (/api/pacientes, /api/auth), utilizando métodos HTTP semânticos (GET, POST, PUT, PATCH, DELETE), facilitando a compreensão e integração.
 5. **Layered System**: A arquitetura do backend permite a organização em camadas, como middlewares de autenticação, validação de dados e manipulação de erros. Essa abordagem melhora a segurança e a manutenção do sistema.
 
+## 🛠️ Principais Tecnologias Identificadas:
+ - Backend:
+ - Node.js  - Runtime JavaScript
+ - Express.js  - Framework web
+ - JavaScript - Linguagem principal
+ - Banco de Dados:
+ - MySQL  - SGBD relacional
+ - Sequelize - ORM para Node.js
+ - Segurança e Autenticação:
+ - JWT - Autenticação com tokens
+ - bcrypt  - Criptografia de senhas
+ - CORS - Controle de acesso
+
+
 ## 📋Requisitos
 
 ### Backend
