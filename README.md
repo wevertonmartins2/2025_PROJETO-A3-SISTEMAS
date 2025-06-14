@@ -5,6 +5,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 ## 📚 Sumário
 
 - 🔍 [ Visão Geral](#visão-geral)
+- 🛠️ [Principais Tecnologias Utilizadas](#Tecnologias-Utilizadas)
 - 📋 [Requisitos](#requisitos)
 - 📁 [Estrutura do Projeto](#estrutura-do-projeto)
 - ⚙ [Configuração do Ambiente](#Configuração-do-Ambiente)
@@ -12,7 +13,7 @@ Este projeto implementa uma API RESTful completa para um sistema de gerenciament
 - 🔗 [Endpoints da API](#endpoints-da-api)
 - 🔐 [Autenticação e Autorização](#autenticação-e-autorização)
 - 🔄 [Coleção de Testes](#Coleção-de-Testes-no-Postman)
-  - ✅ [Testes de Backend](#testes-de-backend)
+- ✅ [Testes de Backend](#testes-de-backend)
 - 🚀 [Executando o Projeto](#executando-o-projeto)
 - 🛡️ [Considerações de Segurança](#considerações-de-segurança)
 - 👥 [Grupo A3](#Grupo-A3)
@@ -28,7 +29,7 @@ O sistema foi desenvolvido para atender às necessidades de uma clínica médica
 4. **Uniform Interface**: A API utiliza uma interface consistente, baseada em padrões REST. Endpoints seguem convenções claras de recursos (/api/pacientes, /api/auth), utilizando métodos HTTP semânticos (GET, POST, PUT, PATCH, DELETE), facilitando a compreensão e integração.
 5. **Layered System**: A arquitetura do backend permite a organização em camadas, como middlewares de autenticação, validação de dados e manipulação de erros. Essa abordagem melhora a segurança e a manutenção do sistema.
 
-## 🛠️ Principais Tecnologias Identificadas:
+## 🛠️Principais Tecnologias Utilizadas:
  - Backend:
  - Node.js  - Runtime JavaScript
  - Express.js  - Framework web
